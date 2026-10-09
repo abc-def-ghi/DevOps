@@ -1,0 +1,61 @@
+### GET - All students
+GET http://localhost:3000/students
+
+### GET - Student by ID
+GET http://localhost:3000/students/1
+
+
+### POST - Create student
+POST http://localhost:3000/students
+Content-Type: application/json
+
+{
+    "name": "Rahul",
+    "age": 20,
+    "course": "CSE"
+}
+
+
+### POST - Create another student
+POST http://localhost:3000/students
+Content-Type: application/json
+
+{
+    "name": "Priya",
+    "age": 21,
+    "course": "ECE"
+}
+
+
+### PUT - Replace entire student record
+PUT http://localhost:3000/students/1
+Content-Type: application/json
+
+{
+    "name": "Rahul",
+    "age": 22,
+    "course": "IT"
+}
+
+
+### PATCH - Update one field
+PATCH http://localhost:3000/students/1
+Content-Type: application/json
+
+{
+    "age": 23
+}
+
+
+### PATCH - Update multiple fields
+PATCH http://localhost:3000/students/1
+Content-Type: application/json
+
+{
+    "age": 24,
+    "course": "CSE"
+}
+
+
+### DELETE - Delete student by ID
+DELETE http://localhost:3000/students/1
