@@ -56,11 +56,11 @@ docker build -t <image name> .
 
 minikube start --driver=docker
 minikube image load <image name>
-kubectl apply -f deployment.yml
+kubectl apply -f deployment.yml --------------- https://shorturl.at/HW96O
 kubectl get deployments
-kubectl create namespace studentmarkservice-ns
+kubectl create namespace studentmarkservice-ns -- https://shorturl.at/413FT
 kubectl get namespaces
-kubectl apply -f service.yml
+kubectl apply -f service.yml ------------------ https://shorturl.at/G5NCK
 kubectl get services
 kubectl get pods
 minikube service student-service --url
