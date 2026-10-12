@@ -1,0 +1,70 @@
+DevOps 
+Docker:
+Docker --install
+wsl --install 
+Docker --version
+Docker pull <imgname>
+Docker ps
+Docker ps -a
+Docker images
+Docker network create <name>
+Docker network ls
+Docker run -d --name <container name> -e <env key>=<env value> -p <host port>:<container port> <image name>
+Docker stop <container name>
+Docker start <container name>
+Docker rm <container name>
+Docker logs
+curl http://localhost/<port no>
+
+Docker compose -f <.yml file path> up -d
+
+
+To create image using dockerfile:
+index.html
+
+Dockerfile -
+FROM nginx
+COPY index.html /usr/share/nginx/html/index.html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+
+Docker build -t <image name> .
+Create a container using this image 
+
+Kubernetes:
+minikube installation - from website install and run .exe file, run the cmd in website after .exe file
+minikube version
+
+kubectl installation - from website install and run .exe file, add path of .exe file to system variables in env variables (path)
+kubectl version 
+
+mkdir student-microservices
+cd student-microservices
+npm init -y
+npm i express 
+server.js file - CRUD on students
+Dockerfile -
+FROM node:20-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install --omit=dev
+COPY server.js .
+EXPOSE 3000
+CMD ["node", "server.js"]
+
+docker build -t <image name> .
+
+minikube start --driver=docker
+minikube image load <image name>
+kubectl apply -f deployment.yml
+kubectl get deployments
+kubectl create namespace studentmarkservice-ns
+kubectl get namespaces
+kubectl apply -f service.yml
+kubectl get services
+kubectl get pods
+minikube service student-service --url
+Use Postman for testing the API
+kubectl delete -f service.yml
+kubectl delete -f deployment.yml
+minikube stop
